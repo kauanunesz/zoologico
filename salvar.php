@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $nome_foto = '';
 
-    // Processamento do Upload da Imagem
     if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
         $diretorio = 'uploads/';
         

@@ -91,7 +91,7 @@
     </main>
 
     <footer>
-        <p>&copy; <?= date('Y') ?> Zoo Park - Sistema de Gestão de Zoológico (CRUD PHP)</p>
+        <p>&copy; <?= date('Y') ?>Sistema de Zoológico</p>
     </footer>
 
     <script>

@@ -30,7 +30,7 @@ $total_animais = $result ? $result->num_rows : 0;
         <div class="header-container">
             <div class="logo-section">
                 <span class="logo-icon">🦁</span>
-                <h1>Zoo Park - Gestão de Animais</h1>
+                <h1>Gestão de Animais</h1>
             </div>
             <nav>
                 <a href="index.php" class="nav-btn">📋 Listar Animais</a>

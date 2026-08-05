@@ -16,10 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: index.php?msg=erro");
         exit;
     }
-
     $nome_foto = $foto_atual;
 
-    // Processamento de Nova Imagem caso enviada
     if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
         $diretorio = 'uploads/';
         $extensao = strtolower(pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION));
@@ -30,9 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $caminho_destino = $diretorio . $nova_foto;
 
             if (move_uploaded_file($_FILES['foto']['tmp_name'], $caminho_destino)) {
-                // Remove a foto antiga se for arquivo de upload anterior
-                if (!empty($foto_atual) && file_exists($diretorio . $foto_atual) && !str_ends_with($foto_atual, '.svg')) {
-                    @unlink($diretorio . $foto_atual);
+                if (!empty($foto_atual) && file_exists($diretorio . $foto_atual) && !str_ends_with($foto_atual, '.jpeg') || !str_ends_with($foto_atual, '.jpg')) {
+                    unlink($diretorio . $foto_atual);
                 }
                 $nome_foto = $nova_foto;
             }
